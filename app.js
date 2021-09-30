@@ -1,17 +1,17 @@
 import kaboom from 'https://unpkg.com/kaboom@next/dist/kaboom.mjs'
 
 kaboom({
-  global: true,
   fullscreen: true,
-  scale: 2,
+  scale: 3,
   debug: true,
-  clearColor: [0, 0, 1, 1],
+  clearColor: [0, 0, 0],
 })
 
 const MOVE_SPEED = 120
 
+loadSprite('floor', './sprites/floor_1.png')
 loadSprite('wall', './sprites/wall_mid.png')
-loadSprite('door', './sprites/wall_fountain_top.png')
+loadSprite('door', './sprites/doors_leaf_closed.png')
 loadSprite('knight', './sprites/masked_orc_idle_anim_f0.png')
 loadSprite('demons', './sprites/big_demon_run_anim_f0.png')
 loadSprite('undeads', './sprites/big_zombie_run_anim_f0.png')
@@ -33,6 +33,29 @@ scene('main', (levelId) => {
       msg: 'Ors',
     },
   }
+
+  addLevel([
+    '===========',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '=         =',
+    '===========',
+  ], {
+    width: 16,
+    height: 16,
+    " ": () => [
+      sprite("floor"),
+    ],
+  });
 
   // Level layouts
   const levels = [
@@ -99,7 +122,7 @@ scene('main', (levelId) => {
   const player = get('player')[0]
 
   function addDialog() {
-    const h = 160
+    const h = 100
     const pad = 16
 
     const bg = add([pos(0, height() - h), rect(width(), h), color(0, 0, 0), z(100)])
