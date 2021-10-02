@@ -1,6 +1,11 @@
-# Hugo Dungeon
+# Treasure Hunters
 
-> Dungeon game with Kaboom.js
+> Treasure hunters game with Kaboom.js
 
+## Assets 
 
-- Thanks [0x72](https://0x72.itch.io/dungeontileset-ii) for Dungen title
+- [Treasure Hunters](https://pixelfrog-assets.itch.io/treasure-hunters)
+
+## License
+
+MIT © [Dang Van Thanh](https://dangthanh.org)

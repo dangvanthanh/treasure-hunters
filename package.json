@@ -1,22 +1,22 @@
 {
-  "name": "buddy",
+  "name": "treasure-hunters",
   "version": "1.0.0",
-  "description": "> Dungeon game with Kaboom.js",
+  "description": "Treasure hunters game with Kaboom.js",
   "main": "app.js",
   "scripts": {
     "dev": "live-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dangvanthanh/hugo-dungeon.git"
+    "url": "git+https://github.com/dangvanthanh/treasure-hunters.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dangvanthanh/hugo-dungeon/issues"
+    "url": "https://github.com/dangvanthanh/treasure-hunters/issues"
   },
-  "homepage": "https://github.com/dangvanthanh/hugo-dungeon#readme",
+  "homepage": "https://github.com/dangvanthanh/treasure-hunters#readme",
   "devDependencies": {
     "live-server": "^1.2.1"
   }
