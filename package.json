@@ -1,31 +1,32 @@
 {
-  "name": "treasure-hunters",
-  "version": "1.0.0",
-  "description": "Treasure hunters game with Kaboom.js",
-  "scripts": {
-    "build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
-    "dev": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
-    "bundle": "bun run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\"",
+	"name": "treasure-hunters",
+	"version": "1.0.0",
+	"description": "Treasure hunters game with Kaboom.js",
+	"type": "module",
+	"scripts": {
+		"build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
+		"dev": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
+		"bundle": "bun run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\"",
 		"lint": "bunx @biomejs/biome check ./src --apply",
 		"format": "bunx @biomejs/biome format ./src --write"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dangvanthanh/treasure-hunters.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dangvanthanh/treasure-hunters/issues"
-  },
-  "homepage": "https://github.com/dangvanthanh/treasure-hunters#readme",
-  "dependencies": {
-    "kaboom": "^3000.1.17",
-    "matter-js": "^0.19.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.6.4",
-    "esbuild": "^0.20.2"
-  }
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dangvanthanh/treasure-hunters.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/dangvanthanh/treasure-hunters/issues"
+	},
+	"homepage": "https://github.com/dangvanthanh/treasure-hunters#readme",
+	"dependencies": {
+		"kaboom": "^3000.1.17",
+		"matter-js": "^0.19.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.6.4",
+		"esbuild": "^0.20.2"
+	}
 }
