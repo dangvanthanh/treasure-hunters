@@ -1,47 +1,59 @@
 import Matter from 'matter-js'
 import matterRect from './physics/rect'
+import k from './kaboom'
 
-import kaboom from 'kaboom'
+const {
+	scene,
+	add,
+	pos,
+	rect,
+	rotate,
+	anchor,
+	color,
+	dt,
+	width,
+	height,
+	onUpdate,
+	onKeyDown,
+} = k
 
-const k = kaboom({
-	fullscreen: true,
-	debug: true,
-	scale: 1,
-	clearColor: [0, 0, 0, 1],
-})
-
-k.scene('main', () => {
+scene('main', () => {
 	const Engine = Matter.Engine
 	const engine = Engine.create()
 
-	k.add([
-		k.pos(k.width() * 0.5, k.height() * 0.1),
-		k.rect(128, 32),
-		k.rotate(0),
-		k.anchor('center'),
-		k.color(255, 0, 0),
+	const box = add([
+		pos(width() * 0.5, height() * 0.1),
+		rect(128, 32),
+		rotate(0),
+		anchor('center'),
+		color(255, 0, 0),
 		matterRect(engine),
 	])
 
-	k.add([
-		k.pos(k.width() * 0.5, k.height() * 0.5),
-		k.rect(220, 32),
-		k.anchor('center'),
-		k.color(0, 0, 1),
+	add([
+		pos(width() * 0.5, height() * 0.5),
+		rect(220, 32),
+		anchor('center'),
+		color(0, 0, 1),
 		matterRect(engine, { isStatic: true }),
 	])
 
-	k.add([
-		k.pos(k.width() * 0.7, k.height() * 0.3),
-		k.rect(220, 32),
-		k.anchor('center'),
-		k.color(0, 0, 1),
+	add([
+		pos(width() * 0.7, height() * 0.3),
+		rect(220, 32),
+		anchor('center'),
+		color(0, 0, 1),
 		matterRect(engine, { isStatic: true }),
 	])
 
-	k.onUpdate(() => {
-		Matter.Engine.update(engine, k.dt() * 500)
+	onUpdate(() => {
+		Matter.Engine.update(engine, dt() * 500)
+	})
+
+	onKeyDown('left', () => {
+		Matter.Body.translate(box, { x: -32, y: 0 })
+		console.log('left')
 	})
 })
 
-k.go('main')
+go('main')
